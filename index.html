@@ -1,128 +1,274 @@
 <!DOCTYPE html>
 <html lang="es">
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-<script src="https://kit.fontawesome.com/0ca0e55b9a.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+  />
+  <script
+    src="https://kit.fontawesome.com/0ca0e55b9a.js"
+    crossorigin="anonymous"
+  ></script>
 
-<title>AhorrADAs</title>
+  <title>AhorrADAs</title>
 
-<body class="has-background-light"> 
-
+  <form class="has-background-light">
     <!-------------------------INICIO BARRA DE NAVEGACIÓN----------------------------------->
-    <nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
+    <nav
+      class="navbar is-primary is-spaced"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <!-- NAVBAR BRAND-->
+      <h1 class="navbar-brand title is-2 has-text-white">
+        <a class="navbar-item">
+          <i class="fas fa-wallet mr-2" aria-hidden="true"></i>AhorrADAs
+        </a>
+      </h1>
 
-        <!-- NAVBAR BRAND-->
-        <h1 class="navbar-brand title is-2 has-text-white">
-            <a class="navbar-item">
-                <i class="fas fa-wallet mr-2" aria-hidden="true"></i>AhorrADAs
-            </a>
-        </h1>
+      <!-- NAVBAR BURGUER -->
 
-        <!-- NAVBAR BURGUER...
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-                </a>
-                -->
+      <a
+        role="button"
+        class="navbar-burger is-active"
+        aria-label="menu"
+        aria-expanded="false"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
 
-        <!--NAVBAR-END-->
-        <div class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item has-text-white"> <i class="fas fa-chart-line mr-2"></i>Balance</a>
-                <a class="navbar-item has-text-white"> <i class="fas fa-tag mr-2"></i>Categorias </a>
-                <a class="navbar-item has-text-white"> <i class="fas fa-chart-pie mr-2"></i>Reportes </a>
-            </div>
+      <!--NAVBAR-END-->
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item has-text-white">
+            <i class="fas fa-chart-line mr-2"></i>Balance</a
+          >
+          <a class="navbar-item has-text-white" id="boton-link-categorias">
+            <i class="fas fa-tag mr-2"></i>Categorias
+          </a>
+          <a class="navbar-item has-text-white">
+            <i class="fas fa-chart-pie mr-2"></i>Reportes
+          </a>
         </div>
+      </div>
     </nav>
-<!---------------------------- FIN BARRA DE NAVEGACION------------------------------------>
+    <!---------------------------- FIN BARRA DE NAVEGACION------------------------------------>
 
-<!----------------------------TARJETA BALANCE--------------------------------------------->
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-offset-1 is-3">
-                    <article class="box">
-                        <h3 class="title">Balance</h3>
-                        <div class="columns">
-                            <div class="column is-5">
-                                <p class="">Ganancias</p>
-                                <p class="">Gastos</p>
-                                <p class="">Total</p>
-                            </div>
-                            <div class="column is-7">
-                                <p class="has-text-right has-text-success">+0</p>
-                                <p class="has-text-right has-text-danger">-0</p>
-                                <p class="has-text-right has-text-dark">0</p>
-                            </div>
-                        </div>
-                    </article>
- <!--------------------------------TARJETA FILTROS-------------------------------------------->
-                    <article class="box">
-                        <div class="columns">
-                            <h3 class="title column is-6">Filtros</h3>
-                            <button class="button is-ghost column is-6">Ocultar filtros</button>
-                        </div>
-                        <div class="field">
-                            <label class="label">Tipo</label>
-                            <div class="control">
-                                <div class="select is-fullwidth is-normal">
-                                    <select>
-                                        <option value="todos">Todos</option>
-                                        <option value="gastos">Gastos</option>
-                                        <option value="ganancia">Ganancia</option>
-
-
-                                    </select>
-                                    <div class="field">
-                                    <label class="label">Categorias</label>
-                                    <div class="control">
-                                        <div class="select is-fullwidth is-normal">
-                                            <select>
-                                                <option value="todos">Todas</option>
-                                                <option value="gastos">Comida</option>
-                                                <option value="ganancia">Servicios</option>
-                                                <option value="ganancia">Salidas</option>
-                                                <option value="ganancia">Educacion</option>
-                                                <option value="ganancia">Transporte</option>
-                                                <option value="ganancia">Trabajo</option>
-                                    
-                                            </select>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </article>
+    <!----------------------------TARJETA BALANCE--------------------------------------------->
+    <div class="container" id="home-ahorradas">
+      <section class="section">
+        <div class="columns">
+          <div class="column is-offset-1 is-3">
+            <article class="box">
+              <h3 class="title has-text-weight-bold">Balance</h3>
+              <div class="columns">
+                <div class="column is-5">
+                  <p class="is-size-5 mb-4">Ganancias</p>
+                  <p class="is-size-5 mb-4">Gastos</p>
+                  <p class="is-size-5">Total</p>
                 </div>
-
-<!------------------------------------TARJETA OPERACIONES-------------------------------------->
                 <div class="column is-7">
-                    <div class="box">
-                        <h3 class="title">Operaciones</h3>
-                        <div class="columns">
-                            <div class="column is-offset-3 is-6">
-                                <div class="image">
-                                    <img src="img/undraw_wallet_aym5.svg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  <p class="has-text-right has-text-success mb-4">+0</p>
+                  <p class="has-text-right has-text-danger mb-5">-0</p>
+                  <p class="has-text-right has-text-dark has-text-weight-bold">$0</p>
                 </div>
+              </div>
+            </article>
+            <!--------------------------------TARJETA FILTROS-------------------------------------------->
+            <article class="box">
+              <div class="columns">
+                <h3 class="title column is-6">Filtros</h3>
+                <button class="button is-ghost column is-6">
+                  Ocultar filtros
+                </button>
+                <!-- CHEQUEAR RESPONSIVE -->
+              </div>
+              <div class="field">
+                <label class="label">Tipo</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-normal">
+                    <select>
+                      <option value="todos">Todos</option>
+                      <option value="gastos">Gastos</option>
+                      <option value="ganancia">Ganancia</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Categorias</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-normal">
+                    <select>
+                      <option value="todos">Todas</option>
+                      <option value="gastos">Comida</option>
+                      <option value="ganancia">Servicios</option>
+                      <option value="ganancia">Salidas</option>
+                      <option value="ganancia">Educacion</option>
+                      <option value="ganancia">Transporte</option>
+                      <option value="ganancia">Trabajo</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="date" class="label">Desde</label>
+                <div class="control">
+                  <input type="date" class="input" id="date" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Ordenar por</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-normal">
+                    <select>
+                      <option value="Mas Reciente">Mas Reciente</option>
+                      <option value="Menos Reciente">Menos Reciente</option>
+                      <option value="Mayor Monto">Mayor Monto</option>
+                      <option value="Menor Monto">Menor Monto</option>
+                      <option value="A/Z">A/Z</option>
+                      <option value="Z/A">Z/A</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!------------------------------------TARJETA OPERACIONES-------------------------------------->
+          <div class="column" id="tarjeta-operaciones">
+            <div class="box">
+              <div class="columns">
+                <div class="column">
+                  <h3 class="title is-4 has-text-weight-bold">Operaciones</h3>
+                </div>
+                <div class="column is is-offset-5">
+                  <!-- ARREGLAR BOTON HACER RESPONSIVE -->
+                  <div class="buttons">
+                    <button class="button is-primary">+ Nueva Operacion</button>
+                  </div>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column is-offset-3 is-6 mt-4">
+                  <div class="image py-4">
+                    <img src="img/undraw_wallet_aym5.svg" />
+                  </div>
+                  <h4
+                    class="
+                      is-size-4
+                      has-text-centered has-text-weight-semibold
+                      my-5
+                    "
+                  >
+                    Sin Resultados
+                  </h4>
+                  <p class="is size-3 has-text-centered mb-6">
+                    Cambia los filtros o agrega operaciones
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </section>
+    </div>
+    <!--------------------------------------------- TARJETA NUEVA OPERACION----------------------------------------------------->
+    <form id="tarjeta-nueva-operacion" class="section is-hidden">
+    <div class="container">
+        <div class="box column is-8 is-offset-2">
+          <div class="columns">
+            <div class="column">
+              <h3 class="title">Nueva Operacion</h3>
 
-    </section>
+              <label for="Descripción" class="label">Descripción</label>
+
+              <input class="input" type="text" placeholder="" />
+
+              <div class="field">
+                <label class="label">Monto</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-normal">
+                    <select>
+                      <option value="Gasto">Gasto</option>
+                      <option value="Ganacia">Ganancia</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Tipo</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-normal">
+                    <select>
+                      <option value="Comida">Comida</option>
+                      <option value="Servicios">Servicios</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="date" class="label">Desde</label>
+                <div class="control">
+                  <input type="date" class="input" id="date" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons is-right">
+            <button id="cancelar-nueva-operacion"class="button is-light">Cancelar</button>         
+            <button id="agregar-nueva-operacion"class="button is-success">Agregar</button>
+          </div>
+        </div>
+    </div>
+</form>
+
+  <!--------------------------------------------- TARJETA CATEGORIAS----------------------------------------------------->
+  <form id="tarjeta-categorias" class="">
+    <div class="container">
+        <div class="box column is-8 is-offset-2">
+          <div class="columns">
+            <div class="column"> 
+              <h3 class="title">Categorias</h3>
+              <label for="Descripción" class="label">Nombre</label>
+              <input class="input" type="text" placeholder="" />
+              <div class="buttons is-right">
+              <button id="agregar-categoria"class="button is-success">Agregar</button>
+            </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+    </div>
+</form>
+<!---------------------------------------- TARJETA REPORTES --------------------------------------->
+<form id="tarjeta-reportes" class="">
+  <div class="container">
+      <div class="box column is-8 is-offset-2">
+        <div class="columns">
+          <div class="column"> 
+            <h3 class="title">Reportes</h3>
+            <label for="Descripción" class="label">Nombre</label>
+            <input class="input" type="text" placeholder="" />
+            </div>
+          </div>
+        </div>          
+      </div>
+  </div>
+</form>
 
 
-
-    <script src="index.js"></script>
-</body>
-
+ <script src="index.js"></script>
+ 
+  </body>
 </html>
 <!-- 
-Probar commit -->
+Probar commit 2 -->
